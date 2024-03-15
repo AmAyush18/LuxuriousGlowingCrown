@@ -1,14 +1,14 @@
 import React from 'react'
-import Hero from './Hero'
+import ContactHero from './ContactHero'
 import ContactComponent from '../ContactComponent'
 
-const HomePage = () => {
+const ContactPage = () => {
   return (
     <div className='w-full'>
-        <Hero />
+        <ContactHero />
         <ContactComponent bgImage={"/contact/ContactImage1.jpeg"} />
     </div>
   )
 }
 
-export default HomePage
+export default ContactPage
