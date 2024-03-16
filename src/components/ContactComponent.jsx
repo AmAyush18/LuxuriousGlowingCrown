@@ -26,7 +26,7 @@ const ContactComponent = ({bgImage}) => {
     const [interest, setInterest] = useState(null);
 
   return (
-    <div className='w-full bg-[#F4EDE6] flex min-h-screen'>
+    <div id='contact' className='w-full bg-[#F4EDE6] flex min-h-screen'>
         <div 
             className="w-[50%] flex justify-center items-center" 
             style={{ backgroundImage: `url('${bgImage}')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', objectFit: 'cover'}}
