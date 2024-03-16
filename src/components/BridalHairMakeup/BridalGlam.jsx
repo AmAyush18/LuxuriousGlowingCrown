@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const BridalGlam = () => {
   return (
     <div className='w-full flex bg-[#080D10] max-h-[640px]'>
-        <div className="w-[60%] flex flex-col justify-between">
+        <div className="w-[55%] flex flex-col justify-between">
             <div className="w-full flex flex-col gap-y-7 flex-1 justify-center px-14 pt-16">
                 <h3 className='cormorant text-white text-left text-[54px] font-[700] leading-[66px]'>
                     Tailored Bridal Glam
@@ -20,7 +20,7 @@ const BridalGlam = () => {
                 <img src="/bottom-left-white.png" alt="" className='object-cover' />
             </div>
         </div>
-        <div className="w-[40%] h-full">
+        <div className="w-[45%] h-full">
             <img src="/bridal-hair-makeup/Bridal.png" alt="" className='w-[100%] max-h-[640px] object-cover' />
         </div>
     </div>

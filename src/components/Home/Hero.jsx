@@ -8,16 +8,16 @@ const Hero = () => {
     const bgImage = `/home/HomeHero.jpeg`
   return (
     <div className='w-full min-h-screen flex' style={{ backgroundImage: `url('${bgImage}')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', objectFit: 'cover'}}>
-        <div className="w-[60%] h-full">
+        <div className="w-[55%] h-full">
             <Header />
         </div>
-        <div className="w-[40%] min-h-screen flex flex-col gap-y-2 bg-[#0B1518]/65 backdrop-blur-md">
+        <div className="w-[45%] min-h-screen flex flex-col gap-y-2 bg-[#0B1518]/65 backdrop-blur-md">
             <Navbar />
 
-            <div className="w-full mt-20 text-white px-20">
+            <div className="w-full min-h-[90vh] flex flex-col justify-center text-white pl-20 pr-10">
                 
                 <h1 className='cormorant font-[700] text-[64px] uppercase'>The</h1>
-                <h1 className='cormorant font-[700] text-[64px] uppercase leading-9'>Perfect Cut</h1>
+                <h1 className='cormorant font-[700] text-[64px] uppercase leading-[64px]'>Perfect Cut</h1>
                 
                 <p className='text-[18px] text-[#ccc] font-[600] mt-8'>
                     We see “YOU” and we create the look that

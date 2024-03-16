@@ -5,10 +5,10 @@ import Navbar from '../Navbar'
 const ServicesNavbar = () => {
   return (
     <div className='w-full flex bg-transparent'>
-        <div className="w-[60%] h-full">
+        <div className="w-[55%] h-full">
             <Header />
         </div>
-        <div className="w-[40%]">
+        <div className="w-[45%]">
             <Navbar />
         </div>
     </div>
