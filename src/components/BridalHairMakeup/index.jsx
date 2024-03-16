@@ -2,6 +2,7 @@ import React from 'react'
 import BridalHairMakeupHero from './BridalHairMakeupHero'
 import ContactComponent from '../ContactComponent'
 import InstagramComponent from '../InstagramComponent'
+import BridalGlam from './BridalGlam'
 
 const displayImages = [
   "/instagram/image_5.png",
@@ -14,6 +15,7 @@ const BridalHairMakeupPage = () => {
   return (
     <div className='w-full'>
         <BridalHairMakeupHero />
+        <BridalGlam />
         <InstagramComponent displayImages={displayImages} />
         <ContactComponent bgImage={"/contact/ContactImage2.jpeg"} />
     </div>

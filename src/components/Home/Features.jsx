@@ -32,8 +32,8 @@ const Features = () => {
                 FEATURES.map(({id, title1, title2, description, icon}) => (
                     <div key={id} className="w-[31%] flex flex-col gap-y-3 justify-center items-center">
                         <img src={icon} alt="icon" className='w-[76px] h-[64px] object-cover' />
-                        <h3 className='text-center cormorant text-[24px] font-[700] leading-9 tracking-[3px]'>{title1}</h3>
-                        <h3 className='text-center cormorant text-[24px] font-[700] leading-[4px] tracking-[3px]'>{title2}</h3>
+                        <h3 className='text-center cormorant uppercase text-[24px] font-[700] leading-9 tracking-[3px]'>{title1}</h3>
+                        <h3 className='text-center cormorant uppercase text-[24px] font-[700] leading-[4px] tracking-[3px]'>{title2}</h3>
                         <p className='text-[14px] w-[90%] leading-9 text-center text-[#4D4D4D]'>{description}</p>
                     </div>
                 ))

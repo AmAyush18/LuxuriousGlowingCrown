@@ -4,6 +4,9 @@ import ContactComponent from '../ContactComponent'
 import DisplayBanner from '../DisplayBanner'
 import InstagramComponent from '../InstagramComponent'
 import Features from './Features'
+import About from './About'
+import OpeningHours from '../OpeningHours'
+import WhyChooseUs from './WhyChooseUs'
 
 const BANNERS_DETAILS = [
   {
@@ -40,6 +43,9 @@ const HomePage = () => {
   return (
     <div className='w-full'>
         <Hero />
+        <About />
+        <OpeningHours />
+        <WhyChooseUs />
         <Features />
         {
           BANNERS_DETAILS.map((banner) => (

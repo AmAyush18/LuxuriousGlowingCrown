@@ -3,6 +3,8 @@ import ContactComponent from '../ContactComponent'
 import DisplayBanner from '../DisplayBanner'
 import InstagramComponent from '../InstagramComponent'
 import CustomerCareBanner from './CustomerCareBanner'
+import ServicesFeatures from './ServicesFeatures'
+import ServicesHero from './ServicesHero'
 
 const SERVICES_BANNERS_DETAILS = [
     {
@@ -53,6 +55,8 @@ const displayImages = [
 const ServicesPage = () => {
   return (
     <div className='w-full'>
+      <ServicesHero />
+      <ServicesFeatures />
       {
         SERVICES_BANNERS_DETAILS.map((banner) => (
           <DisplayBanner 
