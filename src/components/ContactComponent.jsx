@@ -26,19 +26,24 @@ const ContactComponent = ({bgImage}) => {
     const [interest, setInterest] = useState(null);
 
   return (
-    <div id='contact' className='w-full bg-[#F4EDE6] flex min-h-screen'>
+    <div id='contact' className='w-full bg-[#F4EDE6] flex md:flex-row flex-col min-h-screen'>
         <div 
-            className="w-[50%] flex justify-center items-center" 
+            className="w-full md:w-[50%] flex justify-center items-center min-h-[90vh]" 
             style={{ backgroundImage: `url('${bgImage}')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', objectFit: 'cover'}}
         >
-            <div className="bg-[#000]/50 max-w-[70%] py-8 px-8 text-white text-center">
-                <h1 className='cormorant font-[600] tracking-[3.25px] text-[60px] uppercase'>We would</h1>
-                <h1 className='cormorant font-[600] tracking-[3.25px] text-[60px] uppercase leading-9'>like to </h1>
-                <h1 className='cormorant font-[600] tracking-[3.25px] text-[60px] uppercase '>hear from </h1>
-                <h1 className='cormorant font-[600] tracking-[3.25px] text-[60px] uppercase leading-9'>you</h1>
-            </div>            
+            <div className="lg:block hidden bg-[#000]/50 max-w-[70%] py-8 px-8 text-white text-center">
+                <h1 className='cormorant font-[600] tracking-[3.25px] md:text-[52px] lg:text-[60px] uppercase'>We would</h1>
+                <h1 className='cormorant font-[600] tracking-[3.25px] md:text-[52px] lg:text-[60px] uppercase leading-9'>like to </h1>
+                <h1 className='cormorant font-[600] tracking-[3.25px] md:text-[52px] lg:text-[60px] uppercase'>hear from </h1>
+                <h1 className='cormorant font-[600] tracking-[3.25px] md:text-[52px] lg:text-[60px] uppercase leading-9'>you</h1>
+            </div>   
+            <div className="lg:hidden bg-[#000]/50 max-w-[70%] w-fit py-8 px-8 text-white text-center">
+                <h1 className='cormorant font-[600] tracking-[3.25px] text-[48px] md:text-[52px] lg:text-[60px] uppercase'>
+                    We would like to hear from you
+                </h1>
+            </div>         
         </div>
-        <div className="w-[50%]">
+        <div className="w-full md:w-[50%]">
             <form className='w-[80%] min-h-screen mx-auto py-8 flex flex-col gap-y-2 justify-evenly'>
 
                 {/* First Name and Last Name Input  */}
@@ -90,7 +95,7 @@ const ContactComponent = ({bgImage}) => {
                 </div>
 
                 {/* Interest Input  */}
-                <div className="w-full flex gap-x-5">
+                <div className="w-full flex md:flex-row flex-col md:gap-y-0 gap-y-3 gap-x-5">
                     <p className={
                             `py-4 px-5 border text-[16px] cursor-pointer
                             ${interest === 'Hair Cut' ? 'border-black/85 bg-[#ccc]/50' : 'border-black'}`
