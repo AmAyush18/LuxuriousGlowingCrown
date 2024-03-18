@@ -1,10 +1,45 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaInstagram, FaFacebook, FaPinterest } from "react-icons/fa";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Footer = () => {
 
   const [email, setEmail] = useState("");
+  const [isSending, setIsSending] = useState(false)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Prepare data to send to the API
+    const bodyContent = `Email: ${email}`;
+
+    try {        
+      setIsSending(true)
+        
+      const response = await fetch('https://lgc-server.onrender.com/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({bodyContent}),
+      });
+
+      if (response.ok) {
+        toast.success("Sent Successfully");
+        setEmail('');
+        // console.log('Email sent successfully!');
+      } else {
+        toast.error("Error sending mail, please try again!")
+        // console.error('Error sending email');
+      }
+    } catch (error) {
+      toast.error("Error sending mail, please try again!")
+    //   console.error('Error sending email:', error);
+    } finally {
+        setIsSending(false);
+    }
+  };
 
   return (
     <div className='w-full bg-black pt-28 text-white'>
@@ -42,7 +77,7 @@ const Footer = () => {
         {/* Section-3  */}
         <div className="w-[40%]">
           <h3 className='text-[#ccc] text-[20px] font-[600]'>Stay informed about our monthly promotions, products & more</h3>
-          <form className='mt-6 flex flex-col gap-y-2'>
+          <form onSubmit={handleSubmit} className='mt-6 flex flex-col gap-y-2'>
             <label htmlFor="email" className='uppercase tracking-[3px] font-[600] text-sm'>email</label>
             <input 
               type="text" 
@@ -50,7 +85,10 @@ const Footer = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               />
-            <button className='mt-4 bg-white text-center py-3 px-10 uppercase w-fit text-black font-[600] tracking-[3px] text-[16px]'>send</button>
+            <button 
+              type='submit' 
+              disabled={isSending}
+              className={`mt-4  text-center py-3 px-10 uppercase w-fit text-black font-[600] tracking-[3px] text-[16px]`+` ${isSending ? 'bg-white/85 cursor-not-allowed' : 'bg-white'}`}>send</button>
           </form>
         </div>
       </div>
@@ -59,6 +97,7 @@ const Footer = () => {
       <div className="w-full text-center">
         <p className='uppercase text-[#ccc] text-[14px] font-[600] tracking-[3px] pb-3'>©designed by The meraki studio</p>
       </div>
+      <Toaster position='top-center' reverseOrder={false} />
     </div>
   )
 }

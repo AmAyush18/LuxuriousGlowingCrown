@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast';
 
 const ContactComponent = ({bgImage}) => {
 
@@ -8,22 +9,71 @@ const ContactComponent = ({bgImage}) => {
             lastName: ``,
             contact: ``,
             email: ``,
-            interest: ``,
             message: ``
         }
     )
+    
+    const [interest, setInterest] = useState(null);
+    const [isSending, setIsSending] = useState(false);
 
     const handlePhoneInputChange = (event) => {
         const inputValue = event.target.value;
         const numericValue = getNumericValue(inputValue);
-        setFormDetails({ ...formDetails, phone: numericValue });
+        setFormDetails({ ...formDetails, contact: numericValue });
       };
     
       const getNumericValue = (value)=> {
         return value.replace(/[^0-9]/g, "");
       };
 
-    const [interest, setInterest] = useState(null);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if(!interest){
+          toast.error("Please pick an interest");
+          return;
+        }
+        // Prepare data to send to the API
+        const bodyContent = `Name: ${formDetails.firstName + " " + formDetails.lastName} \nEmail: ${formDetails.email} \nContact: ${formDetails.contact} \nInterest: ${interest} \nMessage: ${formDetails.message}`;
+    
+    
+        try {
+            
+          setIsSending(true)
+            
+          const response = await fetch('https://lgc-server.onrender.com/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({bodyContent}),
+          });
+    
+          if (response.ok) {
+            toast.success("Sent Successfully");
+            setFormDetails(
+                {
+                    firstName: ``,
+                    lastName: ``,
+                    contact: ``,
+                    email: ``,
+                    interest: ``,
+                    message: ``
+                }
+            )
+            setInterest(null);
+            // console.log('Email sent successfully!');
+          } else {
+            toast.error("Error sending mail, please try again!")
+            // console.error('Error sending email');
+          }
+        } catch (error) {
+          toast.error("Error sending mail, please try again!")
+        //   console.error('Error sending email:', error);
+        } finally {
+            setIsSending(false);
+        }
+      };
 
   return (
     <div id='contact' className='w-full bg-[#F4EDE6] flex md:flex-row flex-col min-h-screen'>
@@ -44,7 +94,7 @@ const ContactComponent = ({bgImage}) => {
             </div>         
         </div>
         <div className="w-full md:w-[50%]">
-            <form className='w-[80%] min-h-screen mx-auto py-8 flex flex-col gap-y-2 justify-evenly'>
+            <form onSubmit={handleSubmit} className='w-[80%] min-h-screen mx-auto py-8 flex flex-col gap-y-2 justify-evenly'>
 
                 {/* First Name and Last Name Input  */}
                 <div className="w-full flex justify-between mt-14">
@@ -53,6 +103,7 @@ const ContactComponent = ({bgImage}) => {
                         <input 
                             type="text" 
                             id='firstName'
+                            required
                             className='w-[95%] outline-transparent bg-transparent outline-none border-b border-b-black' 
                             value={formDetails.firstName}
                             onChange={(e) => setFormDetails({...formDetails, firstName:e.target.value})}
@@ -63,6 +114,7 @@ const ContactComponent = ({bgImage}) => {
                         <input 
                             type="text" 
                             id='lastName'
+                            required
                             className='w-[95%] outline-transparent bg-transparent outline-none border-b border-b-black' 
                             value={formDetails.lastName}
                             onChange={(e) => setFormDetails({...formDetails, lastName:e.target.value})}
@@ -77,8 +129,9 @@ const ContactComponent = ({bgImage}) => {
                         <input 
                             type="text" 
                             id='phone'
+                            required
                             className='w-[95%] outline-transparent bg-transparent outline-none border-b border-b-black' 
-                            value={formDetails.phone}
+                            value={formDetails.contact}
                             onChange={handlePhoneInputChange}
                         />
                     </div>
@@ -87,6 +140,7 @@ const ContactComponent = ({bgImage}) => {
                         <input 
                             type="email" 
                             id='email'
+                            required
                             className='w-[95%] outline-transparent bg-transparent outline-none border-b border-b-black' 
                             value={formDetails.email}
                             onChange={(e) => setFormDetails({...formDetails, email:e.target.value})}
@@ -97,7 +151,7 @@ const ContactComponent = ({bgImage}) => {
                 {/* Interest Input  */}
                 <div className="w-full flex md:flex-row flex-col md:gap-y-0 gap-y-3 gap-x-5">
                     <p className={
-                            `py-4 px-5 border text-[16px] cursor-pointer
+                            `py-4 px-5 border flex flex-col items-center justify-center text-center text-[16px] cursor-pointer
                             ${interest === 'Hair Cut' ? 'border-black/85 bg-[#ccc]/50' : 'border-black'}`
                         }
                         onClick={() => setInterest("Hair Cut")}
@@ -105,7 +159,7 @@ const ContactComponent = ({bgImage}) => {
                         Hair Cut
                     </p>
                     <p className={
-                            `py-4 px-5 border text-[16px] cursor-pointer
+                            `py-4 px-5 border flex flex-col items-center justify-center text-center text-[16px] cursor-pointer
                             ${interest === 'Coloring' ? 'border-black/85 bg-[#ccc]/50' : 'border-black'}`
                         }
                         onClick={() => setInterest("Coloring")}
@@ -113,7 +167,7 @@ const ContactComponent = ({bgImage}) => {
                         Coloring
                     </p>
                     <p className={
-                            `py-4 px-5 border text-[16px] cursor-pointer
+                            `py-4 px-5 border flex flex-col items-center justify-center text-center text-[16px] cursor-pointer
                             ${interest === 'Straightning' ? 'border-black/85 bg-[#ccc]/50' : 'border-black'}`
                         }
                         onClick={() => setInterest("Straightning")}
@@ -129,6 +183,7 @@ const ContactComponent = ({bgImage}) => {
                         <input 
                             type="text" 
                             id='message'
+                            required
                             className='w-[100%] outline-transparent bg-transparent outline-none border-b border-b-black' 
                             value={formDetails.message}
                             onChange={(e) => setFormDetails({...formDetails, message:e.target.value})}
@@ -138,12 +193,14 @@ const ContactComponent = ({bgImage}) => {
 
                 <button
                     type='submit'
-                    className='w-fit uppercase text-center bg-[#000508] text-white py-3 px-7 font-[600] text-[16px] tracking-[3px]'
+                    disabled={isSending}
+                    className={'w-fit uppercase text-center text-white py-3 px-7 font-[600] text-[16px] tracking-[3px]'+` ${isSending? 'bg-[#000508]/85 cursor-not-allowed' : 'bg-[#000508]'}`}
                 >
                     send message
                 </button>
             </form>
         </div>
+        <Toaster position='top-center' reverseOrder={false} />
     </div>
   )
 }
