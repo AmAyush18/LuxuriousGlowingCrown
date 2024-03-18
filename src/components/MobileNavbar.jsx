@@ -64,7 +64,7 @@ const MobileNavbar = () => {
         </div>
         <div
             className={`space-y-4 w-[65%] max-w-[1200px] transition-[500] rounded-b-xl mx-auto px-4 md:hidden mt-16 py-7 bg-[#0B1518]/65 backdrop-blur-md ${
-            isMenuOpen ? "block fixed top-0 right-0" : "hidden"
+            isMenuOpen ? "block fixed top-7 right-0" : "hidden"
             }`}
         >
             {navOptions.map((nav) => (

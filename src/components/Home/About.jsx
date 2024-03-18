@@ -22,7 +22,7 @@ const About = () => {
             </div>
         </div>
         <div className="w-full md:w-[45%] h-full">
-            <img src="/home/about.png" alt="" className='w-[100%] max-w-[640px] md:min-h-[640px] object-cover' />
+            <img src="/home/about.png" alt="" className='w-[100%] max-h-[640px] md:min-h-[640px] object-cover' />
         </div>
     </div>
   )

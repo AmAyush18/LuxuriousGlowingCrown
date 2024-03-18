@@ -66,8 +66,8 @@ const Navbar = () => {
                 </button>
             </div>
             <div
-                className={`space-y-4 w-[100%] max-w-[1200px] transition-[500] rounded-b-xl mx-auto px-4 md:hidden mt-16 py-7 bg-[#0B1518]/65 backdrop-blur-md ${
-                isMenuOpen ? "block fixed top-10 right-0" : "hidden"
+                className={`space-y-4 w-[100%] max-w-[75vw] transition-[500] rounded-b-xl mx-auto px-4 mt-16 py-7 bg-[#0B1518]/65 backdrop-blur-md ${
+                isMenuOpen ? "block fixed top-0 right-0" : "hidden"
                 }`}
             >
                 {navOptions.map((nav) => (

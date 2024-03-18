@@ -15,7 +15,7 @@ const Hero = () => {
         <div className="w-[45%] min-h-screen hidden md:flex flex-col gap-y-2 bg-[#0B1518]/65 backdrop-blur-md">
             <Navbar />
 
-            <div className="w-full min-h-[90vh] flex flex-col justify-center text-white pl-20 pr-10">
+            <div className="w-full min-h-[90vh] flex flex-col justify-center text-white md:pl-10 lg:pl-20 pr-10">
                 
                 <h1 className='cormorant font-[700] text-[64px] uppercase'>The</h1>
                 <h1 className='cormorant font-[700] text-[64px] uppercase leading-[64px]'>Perfect Cut</h1>

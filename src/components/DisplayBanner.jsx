@@ -5,13 +5,13 @@ const DisplayBanner = ({bgImage, reverse, title, subtitle, description}) => {
 
     const letterP = '/P.png'
   return (
-    <div className={`w-full min-h-[80vh] bg-[#F4EDE6] flex ${reverse ? 'flex-row-reverse' : 'flex-row'}`}>
+    <div className={`w-full min-h-[80vh] bg-[#F4EDE6] flex ${reverse ? 'md:flex-row-reverse flex-col' : 'md:flex-row flex-col'}`}>
         <div 
-            className="w-[50%]"
+            className="w-[100%] md:w-[50%] min-h-[80vh]"
             style={{ backgroundImage: `url('${bgImage}')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', objectFit: 'cover'}}
         />
         <div 
-            className="w-[50%]"  
+            className="w-[100%] md:w-[50%]"  
         >
             <div className="w-[100%] mx-auto min-h-[80vh] flex flex-col items-center justify-center text-center gap-y-5">
                 
