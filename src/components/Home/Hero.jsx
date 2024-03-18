@@ -8,7 +8,7 @@ import MobileNavbar from '../MobileNavbar';
 const Hero = () => {
     const bgImage = `/home/HomeHero.jpeg`
   return (
-    <div className='w-full min-h-screen flex' style={{ backgroundImage: `url('${bgImage}')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', objectFit: 'cover'}}>
+    <div className='w-full min-h-screen flex' style={{ backgroundImage: `url('${bgImage}')`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', objectFit: 'cover'}}>
         <div className="hidden md:block w-[55%] h-full">
             <Header />
         </div>

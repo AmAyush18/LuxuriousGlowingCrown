@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 
 const BridalGlam = () => {
   return (
-    <div className='w-full flex bg-[#080D10] max-h-[640px]'>
-        <div className="w-[55%] flex flex-col justify-between">
+    <div className='w-full flex md:flex-row flex-col-reverse bg-[#080D10] min-h-[640px]'>
+        <div className="w-full md:w-[55%] flex flex-col justify-between">
             <div className="w-full flex flex-col gap-y-7 flex-1 justify-center px-14 pt-16">
-                <h3 className='cormorant text-white text-left text-[54px] font-[700] leading-[66px]'>
+                <h3 className='cormorant text-white text-left text-[42px] md:text-[48px] lg:text-[54px] font-[700] leading-[66px]'>
                     Tailored Bridal Glam
                 </h3>
-                <p className='text-[20px] w-[95%] leading-9 text-[#C0C0C0]'>
+                <p className='text-[18px] md:text-[20px] w-[95%] leading-9 text-[#C0C0C0]'>
                     Crafting your signature bridal look with meticulous care, LGC intertwines tradition and trend to unveil a portrait of grace on your wedding day. Discover the alchemy of bespoke hair and makeup that resonates with your bridal vision.
                 </p>
                 <Link to={"#"} className='w-fit px-4 py-2 uppercase text-white border border-white text-[16px] font-[600] leading-9 tracking-[3px]'>
@@ -20,8 +20,8 @@ const BridalGlam = () => {
                 <img src="/bottom-left-white.png" alt="" className='object-cover' />
             </div>
         </div>
-        <div className="w-[45%] h-full">
-            <img src="/bridal-hair-makeup/Bridal.png" alt="" className='w-[100%] max-h-[640px] object-cover' />
+        <div className="w-full md:w-[45%] h-full">
+            <img src="/bridal-hair-makeup/Bridal.png" alt="" className='w-[100%] max-h-[640px] md:min-h-[640px] object-cover' />
         </div>
     </div>
   )
