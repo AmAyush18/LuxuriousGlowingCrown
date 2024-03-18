@@ -8,7 +8,7 @@ const DisplayBanner = ({bgImage, reverse, title, subtitle, description}) => {
     <div className={`w-full min-h-[80vh] bg-[#F4EDE6] flex ${reverse ? 'md:flex-row-reverse flex-col' : 'md:flex-row flex-col'}`}>
         <div 
             className="w-[100%] md:w-[50%] min-h-[80vh]"
-            style={{ backgroundImage: `url('${bgImage}')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', objectFit: 'cover'}}
+            style={{ backgroundImage: `url('${bgImage}')`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', objectFit: 'cover'}}
         />
         <div 
             className="w-[100%] md:w-[50%]"  
