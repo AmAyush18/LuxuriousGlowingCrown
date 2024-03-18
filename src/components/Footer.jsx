@@ -80,7 +80,8 @@ const Footer = () => {
           <form onSubmit={handleSubmit} className='mt-6 flex flex-col gap-y-2'>
             <label htmlFor="email" className='uppercase tracking-[3px] font-[600] text-sm'>email</label>
             <input 
-              type="text" 
+              type="email" 
+              required
               className='w-[95%] outline-transparent bg-transparent outline-none border-b-2 border-b-white' 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
