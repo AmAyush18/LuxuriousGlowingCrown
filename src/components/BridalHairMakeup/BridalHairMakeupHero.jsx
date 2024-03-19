@@ -8,7 +8,7 @@ import MobileNavbar from '../MobileNavbar';
 const BridalHairMakeupHero = () => {
     const bgImage = `/bridal-hair-makeup/BridalHero.png`
     return (
-      <div className='w-full min-h-screen flex' style={{ backgroundImage: `url('${bgImage}')`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', objectFit: 'cover'}}>
+      <div className='w-full max-w-[1300px] mx-auto min-h-screen flex' style={{ backgroundImage: `url('${bgImage}')`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', objectFit: 'cover'}}>
           <div className="w-[55%] h-full hidden md:block">
               <Header />
           </div>

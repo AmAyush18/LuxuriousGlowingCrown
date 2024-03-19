@@ -23,7 +23,7 @@ const FEATURES = [
 
 const ServicesFeatures = () => {
   return (
-    <div className='w-full'>
+    <div className='w-full max-w-[1300px] mx-auto'>
         <div className="w-[90%] mx-auto max-w-[1400px] flex md:flex-row flex-col gap-y-7 justify-between py-[64px]">
             {
                 FEATURES.map(({id, title, description, icon}) => (

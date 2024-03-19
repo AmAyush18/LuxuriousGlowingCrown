@@ -4,7 +4,7 @@ import Navbar from '../Navbar'
 
 const ServicesNavbar = () => {
   return (
-    <div className='w-full flex bg-transparent'>
+    <div className='w-full max-w-[1300px] mx-auto flex bg-transparent'>
         <div className="w-[55%] h-full">
             <Header />
         </div>

@@ -5,9 +5,9 @@ const ServicesHero = () => {
 
   const bgImage = `/services/ServicesHero.png`
   return (
-    <div className='w-full min-h-screen bg-[#000]'>
+    <div className='w-full max-w-[1300px] mx-auto min-h-screen bg-[#000]'>
         <div 
-          className="w-full min-h-[92vh]"
+          className="w-full md:bg-center min-h-[92vh]"
           style={{ backgroundImage: `url('${bgImage}')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', objectFit: 'cover'}}
         >
             <ServicesNavbar />

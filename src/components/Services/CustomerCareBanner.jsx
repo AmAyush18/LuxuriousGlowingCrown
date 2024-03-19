@@ -4,7 +4,7 @@ const CustomerCareBanner = () => {
     const bgImage = `/services/customer-care.png`
   return (
     <div 
-        className='w-full min-h-[600px] flex flex-col justify-center'
+        className='w-full max-w-[1300px] mx-auto min-h-[600px] flex flex-col justify-center'
         style={{ backgroundImage: `url('${bgImage}')`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', objectFit: 'cover'}}  
     >
       <div className="bg-[#000]/50 max-w-[100%] md:max-w-[75%] w-fit text-left md:ml-20 py-10 px-6 md:px-10 lg:px-12 text-white">
