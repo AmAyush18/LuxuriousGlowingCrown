@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const InstagramComponent = ({displayImages}) => {
   return (
-    <div className='w-full py-10'>
+    <div className='w-full max-w-[1300px] mx-auto py-10'>
         <div className="w-[90%] mx-auto max-w-[1400px] flex gap-x-3 mb-3">
             <img src={displayImages[0]} alt="" className='w-[31%] md:w-[32%] max-h-[480px] object-cover' />
             <img src={displayImages[1]} alt="" className='w-[31%] md:w-[32%] max-h-[480px] object-cover' />

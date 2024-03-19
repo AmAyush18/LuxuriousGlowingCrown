@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const OpeningHours = () => {
   return (
-    <div className='w-full flex flex-col bg-[#F4EDE6]'>
+    <div className='w-full max-w-[1300px] mx-auto flex flex-col bg-[#F4EDE6]'>
         <div className='h-fit left-0 top-0'>
             <img src="/top-left.png" alt="" className='object-cover' />
         </div>

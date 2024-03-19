@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
-    <div className='w-full flex md:flex-row flex-col-reverse bg-[#080D10] min-h-[640px]'>
+    <div className='w-full max-w-[1300px] mx-auto flex md:flex-row flex-col-reverse bg-[#080D10] min-h-[640px]'>
         <div className="w-full md:w-[55%] flex flex-col justify-between">
             <div className="w-full flex flex-col gap-y-7 flex-1 justify-center px-14 pt-16">
                 <p className='text-[18px] lg:text-[20px] text-[#C19A5D] font-[600] leading-6 tracking-[3px] uppercase'>about</p>

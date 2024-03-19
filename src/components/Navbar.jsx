@@ -43,7 +43,7 @@ const Navbar = () => {
 
   return (
     <>
-        <div className='w-full text-[#fff] hidden lg:flex justify-between px-10 py-5 z-10'>
+        <div className='w-full max-w-[650px] mx-auto text-[#fff] hidden lg:flex justify-between px-10 py-5 z-10'>
             {
                 navOptions.map(({title, id, url}) => (
                     <Link key={id} className='text-[16px] uppercase' to={url}>

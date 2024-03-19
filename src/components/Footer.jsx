@@ -42,7 +42,7 @@ const Footer = () => {
   };
 
   return (
-    <div className='w-full bg-black pt-28 text-white'>
+    <div className='w-full max-w-[1300px] mx-auto bg-black pt-28 text-white'>
       <div className="w-[85%] mx-auto flex gap-x-2 justify-between items-center pb-24">
         {/* section-1  */}
         <div className="w-[32%]">

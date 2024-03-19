@@ -3,7 +3,7 @@ import React from 'react'
 const WhyChooseUs = () => {
     const bgImage = `/services/ServicesHero.png`
   return (
-    <div className='w-full'>
+    <div className='w-full max-w-[1300px] mx-auto'>
         <div 
           className="w-full min-h-[640px]"
           style={{ backgroundImage: `url('${bgImage}')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', objectFit: 'cover'}}
